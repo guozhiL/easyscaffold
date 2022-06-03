@@ -1,15 +1,16 @@
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
 }
 
 android {
-    compileSdk 32
+    compileSdk rootProject.ext.android.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.guozhi.easysaffold"
-        minSdk 21
-        targetSdk 32
+        minSdk rootProject.ext.android.minSdkVersion
+        targetSdk rootProject.ext.android.targetSdkVersion
+
+        applicationId "com.guozhi.easy_scaffold"
         versionCode 1
         versionName "1.0"
 
@@ -32,12 +33,5 @@ android {
 }
 
 dependencies {
-
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation project(':easyscaffold')
 }
