@@ -1,2 +1,3 @@
 # easyscaffold
 快速简易的Android脚手架
+分别封装了baseActivity baseFragment、baseViewModel、MMKV。方便快速集成
