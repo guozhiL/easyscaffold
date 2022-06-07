@@ -1,0 +1,14 @@
+*.apk
+*.dex
+*.class
+*.iml
+.gradle
+.idea
+build
+**/build/
+**/release
+**/debug
+
+local.properties
+gradlew
+gradlew.bat

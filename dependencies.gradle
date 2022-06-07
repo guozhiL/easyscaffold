@@ -1,0 +1,78 @@
+ext {
+    android = [
+            compileSdkVersion: 31,
+            minSdkVersion    : 21,
+            targetSdkVersion : 30,
+            kotlinVersion    : "1.6.20"
+    ]
+
+    testDeps = [
+            "junit"           : 'junit:junit:4.+',
+            "junit-ext"       : 'androidx.test.ext:junit:1.1.1',
+            "espresso-core"   : 'androidx.test.espresso:espresso-core:3.3.0',
+            "leakcanary-debug": 'com.squareup.leakcanary:leakcanary-android:2.7',
+            "recovery-debug"  : 'com.zxy.android:recovery:1.0.0', // crash信息的展示
+            "recovery-release": 'com.zxy.android:recovery-no-op:1.0.0',
+    ]
+
+    platformDeps = [
+            "android-ktx"             : 'androidx.core:core-ktx:1.6.0',
+            "android-viewmodel-ktx"   : 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1',
+            "android-livedata-ktx"    : 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1',
+            "android-runtime-ktx"     : 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1',
+            "android-fragment-ktx"    : 'androidx.fragment:fragment-ktx:1.3.6',
+            "appcompat"               : 'androidx.appcompat:appcompat:1.4.0',
+            "constraintlayout"        : 'androidx.constraintlayout:constraintlayout:2.0.4',
+            "recyclerview"            : 'androidx.recyclerview:recyclerview:1.2.1',
+            "google-material"         : 'com.google.android.material:material:1.5.0',
+            //mqtt
+            "mqtt-client"             : 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0',
+            "mqtt-service"            : 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1',
+            //消息总线通知
+            "liveEventBus"            : 'io.github.jeremyliao:live-event-bus-x:1.8.0',
+            //mmkv缓存
+            "mmkv"                    : 'com.tencent:mmkv-static:1.2.10',
+            //网络请求
+            "okhttp3LoggerInterceptor": 'com.squareup.okhttp3:logging-interceptor:3.11.0',
+            "retrofit"                : 'com.squareup.retrofit2:retrofit:2.9.0',
+            "retrofitConverterGson"   : 'com.squareup.retrofit2:converter-gson:2.9.0',
+            //数据库
+            "room-runtime"            : 'androidx.room:room-runtime:2.4.1',
+            "room-runtime-ktx"        : 'androidx.room:room-ktx:2.4.1',
+            //图片加载
+            "coil"                    : 'io.coil-kt:coil:1.4.0',
+            "coil-gif"                : 'io.coil-kt:coil-gif:1.4.0',
+            //阿里路由框架
+            "arouter_api"             : "com.alibaba:arouter-api:1.5.2",
+            //屏幕适配
+            'autosize'                : "me.jessyan:autosize:1.1.2",
+    ]
+
+    dependencies = [
+            "ActivityResultLauncher"       : 'com.github.DylanCaiCoding:ActivityResultLauncher:1.1.1', // 替代 StartActivityForResult
+            "BaseRecyclerViewAdapterHelper": 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7', // BRVAH
+            "magicindicator"               : 'com.github.hackware1993:MagicIndicator:1.7.0', // tab
+            "overscroll"                   : 'io.github.everythingme:overscroll-decor-android:1.1.1', // 滑动回弹
+            "process-phoenix"              : 'com.jakewharton:process-phoenix:2.1.2', // 崩溃重启
+            "RoundView"                    : 'io.github.csdn-mobile:RoundView:1.7.1', // 圆角控件
+            "SwipeRecyclerView"            : 'com.yanzhenjie.recyclerview:x:1.3.2', // SwipeRecyclerView 列表侧滑菜单
+            "smartRefreshLayout"           : 'io.github.scwang90:refresh-layout-kernel:2.0.5', // 核心必须依赖
+            "smartRefreshLayout-header"    : 'io.github.scwang90:refresh-header-classics:2.0.5', // 经典刷新头
+            "smartRefreshLayout-footer"    : 'io.github.scwang90:refresh-footer-classics:2.0.5', // 经典加载
+            "ToastUtils"                   : 'com.github.getActivity:ToastUtils:9.6', // Toast
+            "ucrop"                        : 'com.github.yalantis:ucrop:2.2.6', // 图片裁剪
+            "wechat-sdk"                   : 'com.tencent.mm.opensdk:wechat-sdk-android:+', // 微信sdk（登录、支付）
+            "xPopup"                       : 'com.github.li-xiaojun:XPopup:2.7.5', // 弹窗
+            "XUpdate"                      : 'com.github.xuexiangjys:XUpdate:2.1.1', // 版本更新
+            "XUpdate-easy"                 : 'com.github.xuexiangjys.XUpdateAPI:xupdate-easy:1.0.1', // 版本更新简单初始化
+            "XXPermissions"                : 'com.github.getActivity:XXPermissions:13.2', // 权限
+            "zxing"                        : 'com.google.zxing:core:3.3.0' // 二维码
+    ]
+
+    otherDeps = [
+            room_compiler: 'androidx.room:room-compiler:2.4.1',
+            "arouter_compiler"        : "com.alibaba:arouter-compiler:1.5.2",
+    ]
+
+    platformDeps = platformDeps.values()
+}
