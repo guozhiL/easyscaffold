@@ -25,6 +25,12 @@
         <meta-data
             android:name="android.vendor.full_screen"
             android:value="true" />
+
+        <provider
+            android:name=".provider.ScaffoldContentProvider"
+            android:authorities="${applicationId}.init.provider"
+            android:exported="false" />
+
     </application>
 
 </manifest>
