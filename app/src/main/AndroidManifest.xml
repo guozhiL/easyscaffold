@@ -3,6 +3,7 @@
     package="com.guozhi.easyscaffold">
 
     <application
+        android:name="com.guozhi.app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,7 +12,7 @@
         android:theme="@style/Theme.easyscaffold">
 
         <activity
-            android:name="com.guozhi.easy_scaffold.MainActivity"
+            android:name="com.guozhi.app.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

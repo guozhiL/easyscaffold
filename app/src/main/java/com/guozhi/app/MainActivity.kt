@@ -1,34 +1,56 @@
-package com.guozhi.easy_scaffold
+package com.guozhi.app
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
-import com.guozhi.easyscaffold.R
+import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
+import com.guozhi.easyscaffold.base.BaseActivity
 import com.guozhi.easyscaffold.config.GlobalConfig
+import com.guozhi.easyscaffold.databinding.ActivityMainBinding
 import com.guozhi.easyscaffold.http.RetrofitManager
 import com.guozhi.easyscaffold.http.core.IRetrofitFactory
+import com.guozhi.easyscaffold.result.launcherActivityForResult
 import com.tencent.mmkv.MMKV
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MainActivity : AppCompatActivity() {
-
-    private val TAG = "MainActivity"
+@Route(path = "/app/main")
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
         testCache()
         testNetWork()
+        initListener()
+    }
+
+    private fun initListener() {
+        binding.run {
+            btRouter.setOnClickListener {
+                ARouter.getInstance().build("/app/main").navigation(this@MainActivity)
+            }
+            btResult.setOnClickListener {
+                launcherActivityForResult(Intent(this@MainActivity, MainActivity::class.java)) {
+                    Log.e(TAG, "launcherActivityForResult: ${it.data?.getStringExtra("Result")}")
+                }
+            }
+        }
+    }
+
+    override fun finish() {
+        val rst = Intent()
+        rst.putExtra("Result", "返回结果111")
+        setResult(RESULT_OK, rst)
+        super.finish()
     }
 
     private fun testNetWork() {
         //全局的url
-        GlobalConfig.instance.baseHttpUrl = "www.wanAndroid.com"
+        GlobalConfig.instance.baseHttpUrl = "https://www.wanAndroid.com"
         //设置默认的构造工厂
         RetrofitManager.setDefaultRetrofitFactor(object : IRetrofitFactory() {
             override fun createRetrofit(): Retrofit {

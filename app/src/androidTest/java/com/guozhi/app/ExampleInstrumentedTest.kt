@@ -1,4 +1,4 @@
-package com.guozhi.easyscaffold
+package com.guozhi.app
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

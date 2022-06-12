@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -15,6 +17,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //阿里路由框架配置
+        kapt {
+            arguments { arg("AROUTER_MODULE_NAME", project.getName()) }
+        }
     }
 
     buildTypes {
@@ -30,8 +36,20 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    viewBinding {
+        enabled = true
+    }
+
+    dataBinding {
+        enabled true
+    }
+
 }
 
 dependencies {
     implementation project(':easyscaffold')
+    //要在目标页面model里面引入route 才能生产路由表
+    kapt rootProject.ext.otherDeps.arouter_compiler
+
 }

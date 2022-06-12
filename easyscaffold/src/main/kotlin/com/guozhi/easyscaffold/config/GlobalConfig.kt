@@ -14,6 +14,6 @@ class GlobalConfig {
     /**
      * 服务器前缀的url
      */
-    var baseHttpUrl: String = "www.baidu.com"
+    var baseHttpUrl: String = "https://www.baidu.com"
 
 }

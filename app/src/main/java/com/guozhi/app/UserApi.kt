@@ -1,4 +1,4 @@
-package com.guozhi.easy_scaffold
+package com.guozhi.app
 
 import com.guozhi.easyscaffold.http.core.RetrofitBaseUrl
 import retrofit2.http.GET
@@ -9,7 +9,7 @@ import retrofit2.http.Query
  *  create: 2022/6/7 22:30
  *  desc  :
  */
-@RetrofitBaseUrl("www.baidu.com")
+@RetrofitBaseUrl("https://www.baidu.com")
 interface UserApi {
 
     @GET("/user/userName")

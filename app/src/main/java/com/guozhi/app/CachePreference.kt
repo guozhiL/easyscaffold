@@ -1,4 +1,4 @@
-package com.guozhi.easy_scaffold
+package com.guozhi.app
 
 import com.guozhi.easyscaffold.preference.MMKVPreference
 
